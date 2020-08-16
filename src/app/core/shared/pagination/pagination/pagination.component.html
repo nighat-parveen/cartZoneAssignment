@@ -1,0 +1,22 @@
+<div class="paginationContainer" >
+    <div>
+    <button class="btn active" [class.disabled]="pagination.isFirstPage" (click)="pagination.isFirst()" [disabled]="pagination.isFirstPage">First</button>&nbsp;
+    <button class="btn active" [class.disabled]="pagination.isFirstPage" (click)="pagination.isPrevious()" [disabled]="pagination.isFirstPage">&lt;</button>
+</div>
+<div>
+    <input 
+        appPagination
+        #pagination="appPagination"
+        [totalPge]=totalLength
+        (pageChange)="onPageChange($event)"
+        style="width: 30px;margin-left: 1em"
+        disabled
+
+    />&nbsp;/ {{pagination.totalPge}} 
+</div>
+    <div>
+        <button class="btn active" [class.disabled]="pagination.isLastPage" [disabled]="pagination.isLastPage" (click)="pagination.isNext()">&gt;</button>
+        &nbsp;<button class="btn active" [class.disabled]="pagination.isLastPage" [disabled]="pagination.isLastPage" (click)="pagination.isLast()">Last</button>
+    </div>
+    <!-- <span> </span> -->
+</div>

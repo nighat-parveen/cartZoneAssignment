@@ -1,0 +1,28 @@
+
+<app-search (onChangeData)="searchItem($event)"></app-search> 
+<!-- can change to ui component too for further -->
+<span> {{to + 1}} - {{from > users.length ? users.length : from}} of {{users.length}}</span>
+
+<!-- user listing -->
+<div class="user">
+    <div class="card" *ngFor="let item of test | filter: searchData">
+        <img src={{item.avatar}}>
+        <div class="sub">
+            <h4>{{item.f_name}} {{item.l_name}}</h4>
+            <div>{{item.email}} </div>
+            <div>{{item.city}},{{item.state}}-{{item.zip}}</div>
+            <div>web: {{item.web}}</div>
+        </div>
+    </div>
+</div>
+
+<app-pagination [totalLength]="pageCount" (getpageNum)="changedPageNumber($event)"></app-pagination>
+
+
+
+
+
+
+
+
+
